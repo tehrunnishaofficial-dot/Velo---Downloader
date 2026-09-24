@@ -3,7 +3,8 @@ val keystore = file("${rootDir}/debug.keystore")
 val base64File = file("${rootDir}/debug.keystore.base64")
 if (!keystore.exists() && base64File.exists()) {
   try {
-    val decoded = java.util.Base64.getDecoder().decode(base64File.readText().trim())
+    val cleanContent = base64File.readText().replace("\\s".toRegex(), "")
+    val decoded = java.util.Base64.getDecoder().decode(cleanContent)
     keystore.writeBytes(decoded)
   } catch (e: Exception) {
     println("Note: Could not restore debug.keystore from base64: ${e.message}")
