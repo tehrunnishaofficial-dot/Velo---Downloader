@@ -1,0 +1,6 @@
+{
+  "name": "Velo Downloader",
+  "description": "Premium ad-free universal web browser and background media downloader with custom progress tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
